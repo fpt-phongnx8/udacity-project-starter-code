@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import {filterImageFromURL, deleteLocalFiles} from './util/util.js';
 
 
+
   // Init the Express application
   const app = express();
 
@@ -12,9 +13,14 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util.js';
   // Use the body parser middleware for post requests
   app.use(bodyParser.json());
 
+
   // GET /filteredimage?image_url={{URL}}
   // endpoint to filter an image from a public url.
   app.get('/filteredimage', async (req, res) => {
+
+    // const imageBuffer = ... // your image buffer
+    // const mimeType = mime.getType('image.jpg'); // replace 'image.jpg' with the actual file name or extension
+
     const { image_url } = req.query;
     // Check if the image_url query parameter is provided
     if (!image_url) {
@@ -24,7 +30,6 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util.js';
     try {
       // Filter the image using the provided URL
       const filteredImage = await filterImageFromURL(image_url);
-  
       // Send the filtered image as a response
       res.sendFile(filteredImage, () => {
         // Delete the local filtered image file after sending the response
