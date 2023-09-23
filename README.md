@@ -1,2 +1,2 @@
 # URL
-http://project-starter-code-dev.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://udacity-644901090440-images.s3.amazonaws.com/interest_nature.jpg
+http://project-starter-code-dev.us-west-2.elasticbeanstalk.com/filteredimage?image_url=https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg
